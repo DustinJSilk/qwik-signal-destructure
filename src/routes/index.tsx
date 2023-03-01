@@ -1,6 +1,6 @@
 import { component$, type Signal, useSignal } from "@builder.io/qwik";
 
-export function useLinkedSignals() {
+export function useMySignal() {
   const signal = useSignal<number>(1);
 
   return { signal };
@@ -11,7 +11,7 @@ export const Child = component$((props: { signal: Signal<number> }) => {
 });
 
 export default component$(() => {
-  const { signal } = useLinkedSignals();
+  const { signal } = useMySignal();
 
   return <Child signal={signal} />;
 });
